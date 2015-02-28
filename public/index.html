@@ -1,0 +1,70 @@
+<html>
+<head>
+  <title>TheEyeTribe/hello</title>
+  <link rel="stylesheet" href="/css/styles.css" media="screen" title="no title" charset="utf-8">
+  <style>
+    body,html {
+      margin: 0;
+      padding: 0;
+    }
+    #eye {
+      display: none;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 0;
+      bottom: 0;
+      background-color: red;
+    }
+    .content-wrapper {
+      position: relative;
+      width: 1280px;
+      height: 1024px;
+      border: 1px solid black;
+    }
+  </style>
+  <script type='text/javascript' src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div class="content-wrapper">
+    <div id="content"></div>
+    <div id="eye"></div>
+  </div>
+  <div class="controls">
+    <select id="question">
+      <option value="q1" selected>Question 1</option>
+      <option value="q2">Question 2</option>
+    </select>
+    <button id="start">Start</button>
+  </div>
+
+  <script>
+    var socket = io();
+    var eye = document.getElementById('eye');
+    var questionSelect = document.getElementById('question');
+    var startButton = document.getElementById('start');
+    var qId = 'q1';
+
+    startButton.addEventListener('click',function() {
+      socket.emit('startEyeDataStrean', qId);
+    });
+    questionSelect.addEventListener('change',function() {
+      socket.emit('loadQuestion', questionSelect.value);
+    });
+
+    socket.on('frame', function (data) {
+      if (!data.x || !data.y) {
+        eye.style.display = 'none';
+      } else {
+        eye.style.display = 'block';
+        eye.style.left = (data.x-8)+'px';
+        eye.style.top = (data.y-8)+'px';
+      }
+    });
+
+    socket.on('questionContent', function (data) {
+      content.innerHTML = data;
+    });
+  </script>
+</body>
+</html>
