@@ -65,6 +65,9 @@
     socket.on('questionContent', function (data) {
       content.innerHTML = data;
     });
+
+    // initialize first question content
+    socket.emit('loadQuestion', questionSelect.value);
   </script>
 </body>
 </html>
