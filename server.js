@@ -51,7 +51,7 @@ function transmitLoop(qId) {
 
 function readData(callback) {
   parser = csv.parse({delimiter: ';'}, function(err, data){
-    console.log(data.length);
+    // console.log(data.length);
     // console.log(data[1]);
     //eyeData = data;
     parseData(data);
