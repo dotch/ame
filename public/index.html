@@ -1,34 +1,35 @@
 <html>
 <head>
   <title>TheEyeTribe/hello</title>
-  <link rel="stylesheet" href="/css/styles.css" media="screen" title="no title" charset="utf-8">
   <style>
-    body,html {
-      margin: 0;
-      padding: 0;
-    }
-    #eye {
-      display: none;
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      top: 0;
-      bottom: 0;
-      background-color: red;
+    body, html {
+      margin:0;
+      padding:0;
     }
     .content-wrapper {
       position: relative;
-      width: 1280px;
+      width: 1264px;
       height: 1024px;
-      border: 1px solid black;
+    }
+    #survey {
+      position: absolute;
+      top:0;
+      left:0;
+    }
+    #canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   </style>
   <script type='text/javascript' src="/socket.io/socket.io.js"></script>
+  <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.4.13/fabric.min.js"></script>
 </head>
 <body>
   <div class="content-wrapper">
-    <div id="content"></div>
-    <div id="eye"></div>
+    <!-- 1280px - 16px for scrollbar -->
+    <iframe id="survey" src="survey/q1.html" width="1264" height="1024"></iframe>
+    <canvas id="canvas" width="1264" height="1024"></canvas>
   </div>
   <div class="controls">
     <select id="question">
@@ -40,34 +41,59 @@
 
   <script>
     var socket = io();
-    var eye = document.getElementById('eye');
     var questionSelect = document.getElementById('question');
+    var surveyFrame = document.getElementById('survey');
     var startButton = document.getElementById('start');
     var qId = 'q1';
+    var circles = [];
+    var lines = [];
+    var bufferSize = 25;
+    var radius = 5;
+
+    var canvas = new fabric.Canvas('canvas');
 
     startButton.addEventListener('click',function() {
       socket.emit('startEyeDataStrean', qId);
+      canvas.clear();
     });
-    questionSelect.addEventListener('change',function() {
-      socket.emit('loadQuestion', questionSelect.value);
+    questionSelect.addEventListener('change',function(e) {
+      canvas.clear();
+      qId = e.target.value;
+      survey.setAttribute('src', 'survey/' + e.target.value + '.html');
     });
 
     socket.on('frame', function (data) {
       if (!data.x || !data.y) {
-        eye.style.display = 'none';
+        // eye.style.display = 'none';
       } else {
-        eye.style.display = 'block';
-        eye.style.left = (data.x-8)+'px';
-        eye.style.top = (data.y-8)+'px';
+        var circle = new fabric.Circle({
+          left : (data.x-radius),
+          top : (data.y-radius),
+          radius : radius,
+          fill : 'red'
+        });
+        canvas.add(circle);
+        circles.push(circle);
+        if (circles.length > 2) {
+          var x1 = circles[circles.length-2].left + radius;
+          var y1 = circles[circles.length-2].top + radius;
+          var line = new fabric.Line([x1, y1, +data.x, +data.y], {
+            fill: 'red',
+            stroke: 'red',
+            strokeWidth: 1,
+            selectable: false
+          })
+          lines.push(line);
+          canvas.add(line);
+          if (circles.length > bufferSize) {
+            circles.shift().remove();
+            lines.shift().remove();
+          }
+        }
       }
     });
 
-    socket.on('questionContent', function (data) {
-      content.innerHTML = data;
-    });
 
-    // initialize first question content
-    socket.emit('loadQuestion', questionSelect.value);
   </script>
 </body>
 </html>

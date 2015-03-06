@@ -36,8 +36,10 @@ function transmit() {
     return;
   }
   var data = {
-    x: eyeData[currentQuestion][currentPos][153],
-    y: eyeData[currentQuestion][currentPos][154]
+    // eyePos = [153,154]
+    // fixationPos = [45,46]
+    x: eyeData[currentQuestion][currentPos][45],
+    y: eyeData[currentQuestion][currentPos][46]
   }
   io.sockets.emit('frame', data);
   currentPos++;
@@ -46,16 +48,13 @@ function transmit() {
 function transmitLoop(qId) {
   currentQuestion = qId;
   currentPos = 0;
+  clearInterval(interval);
   interval = setInterval(transmit, 1000 / 120); //120hz
 }
 
 function readData(callback) {
   parser = csv.parse({delimiter: ';'}, function(err, data){
-    // console.log(data.length);
-    // console.log(data[1]);
-    //eyeData = data;
     parseData(data);
-
     callback();
   });
   fs.createReadStream(__dirname+'/2012_1_TP68.csv').pipe(parser);
@@ -79,7 +78,7 @@ function parseData(rawData) {
   }
   var sum = 0;
   // verification
-  for (key in eyeData) {
+  for (var key in eyeData) {
     console.log(key, eyeData[key].length);
     sum += eyeData[key].length;
   }
@@ -91,5 +90,5 @@ readData(function() {
   // transmitLoop();
   http.listen(app.get('port'), function() {
     console.log('listening on ' + app.get('port'));
-  })
+  });
 });
