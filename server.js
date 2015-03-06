@@ -32,7 +32,6 @@ function transmit() {
     x: eyeData[currentPos]['FixationPointX (MCSpx)'],
     y: eyeData[currentPos]['FixationPointY (MCSpx)']
   };
-  console.log(data);
   io.sockets.emit('frame', data);
   currentPos++;
 }
