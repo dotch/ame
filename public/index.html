@@ -6,7 +6,7 @@
       margin:0;
       padding:0;
     }
-    .content-wrapper {
+    #content-wrapper {
       position: relative;
       width: 1264px;
       height: 1024px;
@@ -30,7 +30,7 @@
 
 </head>
 <body>
-  <div class="content-wrapper">
+  <div id="content-wrapper">
     <!-- 1280px - 16px for scrollbar -->
     <iframe id="survey" src="survey/q1.html" width="1264" height="1024"></iframe>
     <canvas id="canvas" width="1264" height="1024"></canvas>
@@ -74,7 +74,7 @@
   <script>
     var socket = io();
     var questionSelect = document.getElementById('question');
-    var surveyFrame = document.getElementById('survey');
+    var contentWrapper = document.getElementById('content-wrapper');
     var startButton = document.getElementById('start');
     var qId = 'q1';
     var circles = [];
@@ -91,7 +91,13 @@
     questionSelect.addEventListener('change',function(e) {
       canvas.clear();
       qId = e.target.value;
-      survey.setAttribute('src', 'survey/' + e.target.value + '.html');
+      var newFrame = document.createElement("iframe");
+      newFrame.src = 'survey/' + e.target.value + '.html';
+      newFrame.setAttribute('id','survey');
+      newFrame.setAttribute('width','1264');
+      newFrame.setAttribute('height','1024');
+      var oldFrame = document.getElementById('survey');
+      contentWrapper.replaceChild(newFrame, oldFrame);
     });
 
     socket.on('frame', function (data) {
