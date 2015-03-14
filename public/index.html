@@ -68,68 +68,52 @@
       <option value="q25a">Question 25a</option>
       <option value="q25b">Question 25b</option>
     </select>
+    <select id="user">
+      <option value="TP02" selected>TP02</option>
+      <option value="TP04">TP04</option>
+      <option value="TP06">TP06</option>
+      <option value="TP08">TP08</option>
+      <option value="TP10">TP10</option>
+      <option value="TP12">TP12</option>
+      <option value="TP14">TP14</option>
+      <option value="TP16">TP16</option>
+      <option value="TP18">TP18</option>
+      <option value="TP20">TP20</option>
+      <option value="TP22">TP22</option>
+      <option value="TP24">TP24</option>
+      <option value="TP26">TP26</option>
+      <option value="TP28">TP28</option>
+      <option value="TP30">TP30</option>
+      <option value="TP32">TP32</option>
+      <option value="TP34">TP34</option>
+      <option value="TP36">TP36</option>
+      <option value="TP38">TP38</option>
+      <option value="TP40">TP40</option>
+      <option value="TP42">TP42</option>
+      <option value="TP44">TP44</option>
+      <option value="TP46">TP46</option>
+      <option value="TP48">TP48</option>
+      <option value="TP52">TP52</option>
+      <option value="TP54">TP54</option>
+      <option value="TP56">TP56</option>
+      <option value="TP58">TP58</option>
+      <option value="TP61">TP61</option>
+      <option value="TP64">TP64</option>
+      <option value="TP66">TP66</option>
+      <option value="TP68">TP68</option>
+      <option value="TP70">TP70</option>
+      <option value="TP72">TP72</option>
+      <option value="TP73">TP73</option>
+      <option value="TP76">TP76</option>
+      <option value="TP78">TP78</option>
+      <option value="TP80">TP80</option>
+      <option value="TP81">TP81</option>
+      <option value="TP83">TP83</option>
+      <option value="TP84">TP84</option>
+    </select>
     <button id="start">Start</button>
   </div>
 
-  <script>
-    var socket = io();
-    var questionSelect = document.getElementById('question');
-    var contentWrapper = document.getElementById('content-wrapper');
-    var startButton = document.getElementById('start');
-    var qId = 'q1';
-    var circles = [];
-    var lines = [];
-    var bufferSize = 25;
-    var radius = 5;
-
-    var canvas = new fabric.Canvas('canvas');
-
-    startButton.addEventListener('click',function() {
-      socket.emit('startEyeDataStrean', qId);
-      canvas.clear();
-    });
-    questionSelect.addEventListener('change',function(e) {
-      canvas.clear();
-      qId = e.target.value;
-      var newFrame = document.createElement("iframe");
-      newFrame.src = 'survey/' + e.target.value + '.html';
-      newFrame.setAttribute('id','survey');
-      newFrame.setAttribute('width','1264');
-      newFrame.setAttribute('height','1024');
-      var oldFrame = document.getElementById('survey');
-      contentWrapper.replaceChild(newFrame, oldFrame);
-    });
-
-    socket.on('frame', function (data) {
-      if (!data.x || !data.y) {
-        // eye.style.display = 'none';
-      } else {
-        var circle = new fabric.Circle({
-          left : (data.x-radius),
-          top : (data.y-radius),
-          radius : radius,
-          fill : 'red'
-        });
-        canvas.add(circle);
-        circles.push(circle);
-        if (circles.length > 2) {
-          var x1 = circles[circles.length-2].left + radius;
-          var y1 = circles[circles.length-2].top + radius;
-          var line = new fabric.Line([x1, y1, +data.x, +data.y], {
-            fill: 'red',
-            stroke: 'red',
-            strokeWidth: 1,
-            selectable: false
-          })
-          lines.push(line);
-          canvas.add(line);
-          if (circles.length > bufferSize) {
-            circles.shift().remove();
-            lines.shift().remove();
-          }
-        }
-      }
-    });
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>

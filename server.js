@@ -1,4 +1,3 @@
-var csv = require('csv');
 var fs = require('fs');
 var path = require('path');
 var express = require('express');
@@ -12,9 +11,9 @@ app.use(express.static(__dirname + "/public/"));
 
 io.on('connection', function(socket){
   console.log('a user connected');
-  socket.on('startEyeDataStrean', function(qId) {
+  socket.on('startEyeDataStrean', function(options) {
     console.log('start');
-    transmitLoop(qId);
+    transmitLoop(options.question,options.user);
   });
 });
 
@@ -29,16 +28,18 @@ function transmit() {
     return;
   }
   var data = {
-    x: eyeData[currentPos]['FixationPointX (MCSpx)'],
-    y: eyeData[currentPos]['FixationPointY (MCSpx)']
+    x: eyeData[currentPos].x,
+    y: eyeData[currentPos].y,
+    cx: eyeData[currentPos].cx,
+    cy: eyeData[currentPos].cy
   };
   io.sockets.emit('frame', data);
   currentPos++;
 }
 
-function transmitLoop(qId) {
+function transmitLoop(question, user) {
   currentPos = 0;
-  eyeData = JSON.parse(fs.readFileSync(__dirname+'/data/'+qId+'/68.json', "utf8")).data;
+  eyeData = JSON.parse(fs.readFileSync(__dirname+'/data/'+question+'/'+user+'.json', "utf8"));
   clearInterval(interval);
   interval = setInterval(transmit, 1000 / 120); //120hz
 }

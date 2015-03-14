@@ -5,13 +5,18 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "extract": "node --expose_gc scripts/extractAll.js",
+    "convert": "./scripts/convert.sh"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^0.9.0",
     "csv": "^0.4.1",
-    "express": "^4.12.0",
-    "socket.io": "^1.3.4"
+    "express": "^4.12.2",
+    "lodash": "^3.5.0",
+    "mkdirp": "^0.5.0",
+    "socket.io": "^1.3.5"
   }
 }
