@@ -5,44 +5,53 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+var connectedPeers = {};
+
 app.set('port', (process.env.PORT || 9000));
 
 app.use(express.static(__dirname + "/public/"));
 
 io.on('connection', function(socket){
   console.log('a user connected');
-  socket.on('startEyeDataStrean', function(options) {
-    console.log('start');
-    transmitLoop(options.question,options.user);
-  });
+  new transmission(socket);
 });
 
-var eyeData;
-var currentPos;
-var interval;
-
-function transmit() {
-  if (currentPos > eyeData.length - 1) {
-    clearInterval(interval);
-    console.log('stop');
-    return;
+var transmission = function(socket){
+  this.socket = socket;
+  var _this = this;
+  this.socket.on('startEyeDataStrean', function(options) {
+    console.log('start');
+    _this.start(options.question,options.user);
+  });
+};
+transmission.prototype.start = function(question, user) {
+  this.currentPos = 0;
+  this.interval = null;
+  this.data = JSON.parse(fs.readFileSync(__dirname+'/data/'+question+'/'+user+'.json', "utf8"));
+  clearInterval(this.interval);
+  var _this = this;
+  this.interval = setInterval(function(){
+    _this.sendFrame();
+  }, 1000 / 120); //120hz
+};
+transmission.prototype.stop = function() {
+  clearInterval(this.interval);
+  this.socket.emit('frame', {end: true});
+  console.log('stop');
+};
+transmission.prototype.sendFrame = function() {
+  if (this.currentPos > this.data.length - 1) {
+    return this.stop();
   }
-  var data = {
-    x: eyeData[currentPos].x,
-    y: eyeData[currentPos].y,
-    cx: eyeData[currentPos].cx,
-    cy: eyeData[currentPos].cy
+  var frame = {
+    x: this.data[this.currentPos].x,
+    y: this.data[this.currentPos].y,
+    cx: this.data[this.currentPos].cx,
+    cy: this.data[this.currentPos].cy
   };
-  io.sockets.emit('frame', data);
-  currentPos++;
-}
-
-function transmitLoop(question, user) {
-  currentPos = 0;
-  eyeData = JSON.parse(fs.readFileSync(__dirname+'/data/'+question+'/'+user+'.json', "utf8"));
-  clearInterval(interval);
-  interval = setInterval(transmit, 1000 / 120); //120hz
-}
+  this.socket.emit('frame', frame);
+  this.currentPos++;
+};
 
 http.listen(app.get('port'), function() {
   console.log('listening on ' + app.get('port'));

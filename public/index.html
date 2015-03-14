@@ -6,6 +6,9 @@
       margin:0;
       padding:0;
     }
+    body {
+      display: flex;
+    }
     #content-wrapper {
       position: relative;
       width: 1264px;
@@ -21,11 +24,23 @@
       top: 0;
       left: 0;
     }
+    .controls {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+    .controls label {
+      margin-bottom: 12px;
+      display: flex;
+    }
+    .controls label span {
+      flex: 1;
+    }
+    .controls label select {
+      margin-left: 10px;
+    }
   </style>
   <script type='text/javascript' src="/socket.io/socket.io.js"></script>
-  <!--
-  <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.4.13/fabric.min.js"></script>
-  -->
   <script type='text/javascript' src="lib/fabric.min.js"></script>
 
 </head>
@@ -36,82 +51,88 @@
     <canvas id="canvas" width="1264" height="1024"></canvas>
   </div>
   <div class="controls">
-    <select id="question">
-      <option value="q1" selected>Question 1</option>
-      <option value="q2">Question 2</option>
-      <option value="q3">Question 3</option>
-      <option value="q4">Question 4</option>
-      <option value="q4">Question 4</option>
-      <option value="q5">Question 5</option>
-      <option value="q6a">Question 6a</option>
-      <option value="q6b">Question 6b</option>
-      <option value="q7">Question 7</option>
-      <option value="q8">Question 8</option>
-      <option value="q9a">Question 9a</option>
-      <option value="q9b">Question 9b</option>
-      <option value="q10">Question 10</option>
-      <option value="q11a">Question 11a</option>
-      <option value="q11b">Question 11b</option>
-      <option value="q12">Question 12</option>
-      <option value="q13">Question 13</option>
-      <option value="q14">Question 14</option>
-      <option value="q15">Question 15</option>
-      <option value="q16">Question 16</option>
-      <option value="q17">Question 17</option>
-      <option value="q18">Question 18</option>
-      <option value="q19">Question 19</option>
-      <option value="q20">Question 20</option>
-      <option value="q21">Question 21</option>
-      <option value="q22">Question 22</option>
-      <option value="q23">Question 23</option>
-      <option value="q24">Question 24</option>
-      <option value="q25a">Question 25a</option>
-      <option value="q25b">Question 25b</option>
-    </select>
-    <select id="user">
-      <option value="TP02" selected>TP02</option>
-      <option value="TP04">TP04</option>
-      <option value="TP06">TP06</option>
-      <option value="TP08">TP08</option>
-      <option value="TP10">TP10</option>
-      <option value="TP12">TP12</option>
-      <option value="TP14">TP14</option>
-      <option value="TP16">TP16</option>
-      <option value="TP18">TP18</option>
-      <option value="TP20">TP20</option>
-      <option value="TP22">TP22</option>
-      <option value="TP24">TP24</option>
-      <option value="TP26">TP26</option>
-      <option value="TP28">TP28</option>
-      <option value="TP30">TP30</option>
-      <option value="TP32">TP32</option>
-      <option value="TP34">TP34</option>
-      <option value="TP36">TP36</option>
-      <option value="TP38">TP38</option>
-      <option value="TP40">TP40</option>
-      <option value="TP42">TP42</option>
-      <option value="TP44">TP44</option>
-      <option value="TP46">TP46</option>
-      <option value="TP48">TP48</option>
-      <option value="TP52">TP52</option>
-      <option value="TP54">TP54</option>
-      <option value="TP56">TP56</option>
-      <option value="TP58">TP58</option>
-      <option value="TP61">TP61</option>
-      <option value="TP64">TP64</option>
-      <option value="TP66">TP66</option>
-      <option value="TP68">TP68</option>
-      <option value="TP70">TP70</option>
-      <option value="TP72">TP72</option>
-      <option value="TP73">TP73</option>
-      <option value="TP76">TP76</option>
-      <option value="TP78">TP78</option>
-      <option value="TP80">TP80</option>
-      <option value="TP81">TP81</option>
-      <option value="TP83">TP83</option>
-      <option value="TP84">TP84</option>
-    </select>
-    <button id="start">Start</button>
+    <label>
+      <span>Select Question</span>
+      <select id="question">
+        <option value="q1" selected>Question 1</option>
+        <option value="q2">Question 2</option>
+        <option value="q3">Question 3</option>
+        <option value="q4">Question 4</option>
+        <option value="q4">Question 4</option>
+        <option value="q5">Question 5</option>
+        <option value="q6a">Question 6a</option>
+        <option value="q6b">Question 6b</option>
+        <option value="q7">Question 7</option>
+        <option value="q8">Question 8</option>
+        <option value="q9a">Question 9a</option>
+        <option value="q9b">Question 9b</option>
+        <option value="q10">Question 10</option>
+        <option value="q11a">Question 11a</option>
+        <option value="q11b">Question 11b</option>
+        <option value="q12">Question 12</option>
+        <option value="q13">Question 13</option>
+        <option value="q14">Question 14</option>
+        <option value="q15">Question 15</option>
+        <option value="q16">Question 16</option>
+        <option value="q17">Question 17</option>
+        <option value="q18">Question 18</option>
+        <option value="q19">Question 19</option>
+        <option value="q20">Question 20</option>
+        <option value="q21">Question 21</option>
+        <option value="q22">Question 22</option>
+        <option value="q23">Question 23</option>
+        <option value="q24">Question 24</option>
+        <option value="q25a">Question 25a</option>
+        <option value="q25b">Question 25b</option>
+      </select>
+    </label>
+    <label>
+      <span>Select User</span>
+      <select id="user">
+        <option value="TP02" selected>TP02</option>
+        <option value="TP04">TP04</option>
+        <option value="TP06">TP06</option>
+        <option value="TP08">TP08</option>
+        <option value="TP10">TP10</option>
+        <option value="TP12">TP12</option>
+        <option value="TP14">TP14</option>
+        <option value="TP16">TP16</option>
+        <option value="TP18">TP18</option>
+        <option value="TP20">TP20</option>
+        <option value="TP22">TP22</option>
+        <option value="TP24">TP24</option>
+        <option value="TP26">TP26</option>
+        <option value="TP28">TP28</option>
+        <option value="TP30">TP30</option>
+        <option value="TP32">TP32</option>
+        <option value="TP34">TP34</option>
+        <option value="TP36">TP36</option>
+        <option value="TP38">TP38</option>
+        <option value="TP40">TP40</option>
+        <option value="TP42">TP42</option>
+        <option value="TP44">TP44</option>
+        <option value="TP46">TP46</option>
+        <option value="TP48">TP48</option>
+        <option value="TP52">TP52</option>
+        <option value="TP54">TP54</option>
+        <option value="TP56">TP56</option>
+        <option value="TP58">TP58</option>
+        <option value="TP61">TP61</option>
+        <option value="TP64">TP64</option>
+        <option value="TP66">TP66</option>
+        <option value="TP68">TP68</option>
+        <option value="TP70">TP70</option>
+        <option value="TP72">TP72</option>
+        <option value="TP73">TP73</option>
+        <option value="TP76">TP76</option>
+        <option value="TP78">TP78</option>
+        <option value="TP80">TP80</option>
+        <option value="TP81">TP81</option>
+        <option value="TP83">TP83</option>
+        <option value="TP84">TP84</option>
+      </select>
+    </label>
+    <button id="start">Start Replay</button>
   </div>
 
   <script src="app.js"></script>

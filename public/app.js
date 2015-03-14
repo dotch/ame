@@ -10,7 +10,7 @@ var startButton = document.getElementById('start');
 var circles = [];
 var clickCircles = [];
 var lines = [];
-var bufferSize = 25;
+var bufferSize = 20;
 var radius = 5;
 var canvas = new fabric.Canvas('canvas');
 
@@ -35,6 +35,9 @@ questionSelect.addEventListener('change',function(e) {
 
 socket.on('frame', function (data) {
   if (!data.x || !data.y) {
+    if (data.end) {
+      //canvas.clear();
+    }
     return;
   }
 
