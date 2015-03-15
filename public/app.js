@@ -5,6 +5,10 @@ var questionSelect = document.getElementById('question');
 var userSelect = document.getElementById('user');
 var contentWrapper = document.getElementById('content-wrapper');
 var startButton = document.getElementById('start');
+var problems = document.getElementById('problems');
+
+// templates
+var problemsTemplate = Handlebars.compile(document.getElementById("problems-template").innerHTML);
 
 // for canvas drawing
 var circles = [];
@@ -31,7 +35,9 @@ questionSelect.addEventListener('change',function(e) {
   newFrame.setAttribute('height','1024');
   var oldFrame = document.getElementById('survey');
   contentWrapper.replaceChild(newFrame, oldFrame);
+  socket.emit('questionSelect',{question: qId});
 });
+questionSelect.dispatchEvent(new Event("change"));
 
 socket.on('frame', function (data) {
   if (!data.x || !data.y) {
@@ -82,4 +88,9 @@ socket.on('frame', function (data) {
     circles.shift().remove();
     lines.shift().remove();
   }
+});
+
+socket.on('questionProblems', function (parts) {
+  var html = problemsTemplate({parts: parts});
+  problems.innerHTML = html;
 });

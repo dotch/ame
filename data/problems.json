@@ -1,0 +1,203 @@
+{
+  "q3": [
+    {
+      "id": 1,
+      "text": "Alles in allem - wie zufrieden sind Sie mit den demokratischen Einrichtungen in unserem Land? (Skala von 0-11 mit 0=Ganz und gar unzufrieden und 11=Ganz und gar zufrieden)",
+      "problems": [
+        {
+          "testperson": "TP28",
+          "problemDescription": "TP lässt Unsicherheit erkennen, was mit demokratischen Einrichtungen genau gemeint ist"
+        },
+        {
+          "testperson": "TP34",
+          "problemDescription": "TP versteht den Begriff \"demokratische Einrichtungen\" nicht"
+        },
+        {
+          "testperson": "TP36",
+          "problemDescription": "Begriff \"demokratische Einrichtungen\" wird mit sozialen Einnrichtungen gleichgesetzt"
+        },
+        {
+          "testperson": "TP42",
+          "problemDescription": "Skala ist zu lang, daher Einordnung schwierig"
+        },
+        {
+          "testperson": "TP46",
+          "problemDescription": "Demokratische Einrichtungen ist zu schwammig"
+        },
+        {
+          "testperson": "TP48",
+          "problemDescription": "TP ist unsicher, was damit alles gemeint ist"
+        },
+        {
+          "testperson": "TP58",
+          "problemDescription": "Demokratische Einrichtungen, Beispiele wären hilfreich"
+        },
+        {
+          "testperson": "TP61",
+          "problemDescription": "vager Begriff"
+        },
+        {
+          "testperson": "TP64",
+          "problemDescription": "Demokratische Einrichtungen ist sehr weit gefasst"
+        },
+        {
+          "testperson": "TP68",
+          "problemDescription": "Was sind die demokratischen Einrichtungen?"
+        },
+        {
+          "testperson": "TP80",
+          "problemDescription": "Demokratische Einrichtungen"
+        },
+        {
+          "testperson": "TP81",
+          "problemDescription": "Demokratische Einrichtungen"
+        }
+      ]
+  }],
+  "q4": [
+    {
+      "id": 1,
+      "text": "Wie zufrieden sind Sie mit der Krankenversicherung, der Arbeitslosen- und Rentenversicherung in der Bundesrepublik, also mit dem, was man das \"Netz der sozialen Sicherung\" nennt? (Skala von 0-11 mit 0=Ganz und gar unzufrieden und 11=Ganz und gar zufrieden)",
+      "problems": [
+        {
+          "testperson": "TP10",
+          "problemDescription": "Fehlende Erfahrung/ Nicht-Wissen, Mehrere Stimuli (an die AV wird bei der Bewertung überhaupt nicht gedacht)"
+        },
+        {
+          "testperson": "TP14",
+          "problemDescription": "TP bezieht Antwort vor allem auf die Rentenversicherung"
+        },
+        {
+          "testperson": "TP18",
+          "problemDescription": "TP bezieht sich vor allem auf die KV, arkumentiert hier auch eher in Richtung Unzufriedenheit, alles zu teuer, wird zu wenig bezahlt (Skala verdreht? - Auf Nachfrage sagt sie zwar nein, aber das ist nicht sehr überzeugend)"
+        },
+        {
+          "testperson": "TP26",
+          "problemDescription": "3 verschiedene Konzepte"
+        },
+        {
+          "testperson": "TP38",
+          "problemDescription": "Dreiklang aus drei verschiedenen Sachen. Alle drei Sachen auf einen Punkt zu bringen ist Abwägungssache und das fällt der TP relativ schwer. Die einzelnen Punkte hätte er sehr unterschiedlich bewertet. Fehlende eigene Erfahrung bei AV und RV."
+        },
+        {
+          "testperson": "TP42",
+          "problemDescription": "TP bezieht sich vor allem auf die KV"
+        },
+        {
+          "testperson": "TP48",
+          "problemDescription": "TP denkt vor allem an die KV"
+        },
+        {
+          "testperson": "TP54",
+          "problemDescription": "Bezieht sich nur auf die KV"
+        },
+        {
+          "testperson": "TP60",
+          "problemDescription": "zu allgemein gehalten, was wirklich mit der Frage gemeint ist, gesetzliche oder private Absicerhung"
+        },
+        {
+          "testperson": "TP66",
+          "problemDescription": "TP sagt, wenn man unterschiedliche Meinungen zu den einzelnen Punkten hat, dann wird es eher schwieriger."
+        },
+        {
+          "testperson": "TP70",
+          "problemDescription": "Unterschiedliche Aspekte, die erfragt werden."
+        },
+        {
+          "testperson": "TP81",
+          "problemDescription": "Keine Erfahrungen mit der AV, mit der RV auch nur sehr wenige"
+        },
+        {
+          "testperson": "TP83",
+          "problemDescription": "Wissen ist nicht vorhanden"
+        }
+      ]
+    }
+  ],
+  "q5": [
+    {
+      "id": 1,
+      "text": "Inwieweit stimmen Sie den folgenden Aussagen zu? Privatwirtschaft ist das beste Mittel zur Lösung der wirtschaftlichen Probleme Deutschlands. Skala: Stimme voll und ganz zu (1) - Stimme zu (2) - Weder noch (3) - Stimme nicht zu (4) - Stimme überhaupt nicht zu (5)",
+      "problems": [
+        {
+          "testperson": "TP06",
+          "problemDescription": "Fehlende Erfahrung/ Nicht-Wissen, Mehrere Stimuli (an die AV wird bei der Bewertung überhaupt nicht gedacht)"
+        },
+        {
+          "testperson": "TP12",
+          "problemDescription": "TP frage nach, was denn alles zu Privatwirtschaft zählt"
+        },
+        {
+          "testperson": "TP18",
+          "problemDescription": "Unklarheit bzgl. des Begriffs Privatwirtschaft; Frage wird missverstanden"
+        },
+        {
+          "testperson": "TP20",
+          "problemDescription": "Intention der Frage wird falsch verstanden"
+        },
+        {
+          "testperson": "TP38",
+          "problemDescription": "Je nach Fachgebiet oder Kenntnisstand können Menschen sehr unterschiedliche Definitionen haben, was Privatwirtschaft bedeutet"
+        },
+        {
+          "testperson": "TP40",
+          "problemDescription": "Privatwirtschaft"
+        },
+        {
+          "testperson": "TP44",
+          "problemDescription": "die beiden Items beeinflussen sich wechselseitig"
+        },
+        {
+          "testperson": "TP46",
+          "problemDescription": "Definition von Privatwirtschaft scheint nicht ganz klar zu sein"
+        },
+        {
+          "testperson": "TP50",
+          "problemDescription": "Wirtschaftliche Probleme zu vage"
+        },
+        {
+          "testperson": "TP54",
+          "problemDescription": "Wusste nicht was mit Privatwirtschaft gemeint ist, versteht auch eine Art Selbstständigkeit darunter"
+        },
+        {
+          "testperson": "TP56",
+          "problemDescription": "Was man unter Privatwirtschaft versteht, das könnte man besser formulieren, ein anderer Ausdruck. Dem Begriff müsste noch etwas gegenüber stehen."
+        },
+        {
+          "testperson": "TP60",
+          "problemDescription": "Was ist mit Privatwirtschaft gemeint"
+        },
+        {
+          "testperson": "TP61",
+          "problemDescription": "Privatwirtschaft sagt der TP nichts, sie sagt, dass sie eigentlich geraten hat"
+        },
+        {
+          "testperson": "TP78",
+          "problemDescription": "Was sind wirtschaftliche Probleme?"
+        },
+        {
+          "testperson": "TP80",
+          "problemDescription": "\"wirtschaftliche Probleme\" ist zu allgemein"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Inwieweit stimmen Sie den folgenden Aussagen zu? Es ist Aufgabe des Staates, die Einkommensunterschiede zwischen den Leuten mit hohem Einkommen und solchen mit niedrigem Einkommen zu verringern. Skala: Stimme voll und ganz zu (1) - Stimme zu (2) - Weder noch (3) - Stimme nicht zu (4) - Stimme überhaupt nicht zu (5)",
+      "problems": [
+        {
+          "testperson": "TP34",
+          "problemDescription": "TP bezieht es eher auf Sozialleistungen"
+        },
+        {
+          "testperson": "TP66",
+          "problemDescription": "Die Antwortoption \"weder noch\" passt nicht zu dieser Aussage."
+        },
+        {
+          "testperson": "TP68",
+          "problemDescription": "Inhalt der Aussage ist für die TP nicht klar. Ist es eine Frage, was ich möchte oder wer dafür zuständig sein sollte"
+        }
+      ]
+    }
+  ]
+}

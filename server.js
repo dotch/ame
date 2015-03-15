@@ -23,6 +23,10 @@ var transmission = function(socket){
     console.log('start');
     _this.start(options.question,options.user);
   });
+  this.socket.on('questionSelect', function(options) {
+    console.log(options);
+    _this.sendProblems(options.question);
+  });
 };
 transmission.prototype.start = function(question, user) {
   this.currentPos = 0;
@@ -51,6 +55,10 @@ transmission.prototype.sendFrame = function() {
   };
   this.socket.emit('frame', frame);
   this.currentPos++;
+};
+transmission.prototype.sendProblems = function(question) {
+  var questionData = JSON.parse(fs.readFileSync(__dirname+'/data/problems.json'))[question] || [];
+  this.socket.emit('questionProblems', questionData);
 };
 
 http.listen(app.get('port'), function() {

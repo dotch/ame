@@ -1,0 +1,43 @@
+body, html {
+  margin:0;
+  padding:0;
+}
+body {
+  display: flex;
+}
+#content-wrapper {
+  position: relative;
+  width: 1264px;
+  height: 1024px;
+}
+#survey {
+  position: absolute;
+  top:0;
+  left:0;
+}
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  flex: 1;
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+.controls label {
+  margin-bottom: 12px;
+  display: flex;
+}
+.controls label span {
+  flex: 1;
+}
+.controls label select {
+  margin-left: 10px;
+}
