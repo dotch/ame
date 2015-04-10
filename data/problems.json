@@ -1,203 +1,141 @@
 {
-  "q3": [
-    {
-      "id": 1,
-      "text": "Alles in allem - wie zufrieden sind Sie mit den demokratischen Einrichtungen in unserem Land? (Skala von 0-11 mit 0=Ganz und gar unzufrieden und 11=Ganz und gar zufrieden)",
-      "problems": [
-        {
-          "testperson": "TP28",
-          "problemDescription": "TP lässt Unsicherheit erkennen, was mit demokratischen Einrichtungen genau gemeint ist"
-        },
-        {
-          "testperson": "TP34",
-          "problemDescription": "TP versteht den Begriff \"demokratische Einrichtungen\" nicht"
-        },
-        {
-          "testperson": "TP36",
-          "problemDescription": "Begriff \"demokratische Einrichtungen\" wird mit sozialen Einnrichtungen gleichgesetzt"
-        },
-        {
-          "testperson": "TP42",
-          "problemDescription": "Skala ist zu lang, daher Einordnung schwierig"
-        },
-        {
-          "testperson": "TP46",
-          "problemDescription": "Demokratische Einrichtungen ist zu schwammig"
-        },
-        {
-          "testperson": "TP48",
-          "problemDescription": "TP ist unsicher, was damit alles gemeint ist"
-        },
-        {
-          "testperson": "TP58",
-          "problemDescription": "Demokratische Einrichtungen, Beispiele wären hilfreich"
-        },
-        {
-          "testperson": "TP61",
-          "problemDescription": "vager Begriff"
-        },
-        {
-          "testperson": "TP64",
-          "problemDescription": "Demokratische Einrichtungen ist sehr weit gefasst"
-        },
-        {
-          "testperson": "TP68",
-          "problemDescription": "Was sind die demokratischen Einrichtungen?"
-        },
-        {
-          "testperson": "TP80",
-          "problemDescription": "Demokratische Einrichtungen"
-        },
-        {
-          "testperson": "TP81",
-          "problemDescription": "Demokratische Einrichtungen"
-        }
-      ]
-  }],
-  "q4": [
-    {
-      "id": 1,
-      "text": "Wie zufrieden sind Sie mit der Krankenversicherung, der Arbeitslosen- und Rentenversicherung in der Bundesrepublik, also mit dem, was man das \"Netz der sozialen Sicherung\" nennt? (Skala von 0-11 mit 0=Ganz und gar unzufrieden und 11=Ganz und gar zufrieden)",
-      "problems": [
-        {
-          "testperson": "TP10",
-          "problemDescription": "Fehlende Erfahrung/ Nicht-Wissen, Mehrere Stimuli (an die AV wird bei der Bewertung überhaupt nicht gedacht)"
-        },
-        {
-          "testperson": "TP14",
-          "problemDescription": "TP bezieht Antwort vor allem auf die Rentenversicherung"
-        },
-        {
-          "testperson": "TP18",
-          "problemDescription": "TP bezieht sich vor allem auf die KV, arkumentiert hier auch eher in Richtung Unzufriedenheit, alles zu teuer, wird zu wenig bezahlt (Skala verdreht? - Auf Nachfrage sagt sie zwar nein, aber das ist nicht sehr überzeugend)"
-        },
-        {
-          "testperson": "TP26",
-          "problemDescription": "3 verschiedene Konzepte"
-        },
-        {
-          "testperson": "TP38",
-          "problemDescription": "Dreiklang aus drei verschiedenen Sachen. Alle drei Sachen auf einen Punkt zu bringen ist Abwägungssache und das fällt der TP relativ schwer. Die einzelnen Punkte hätte er sehr unterschiedlich bewertet. Fehlende eigene Erfahrung bei AV und RV."
-        },
-        {
-          "testperson": "TP42",
-          "problemDescription": "TP bezieht sich vor allem auf die KV"
-        },
-        {
-          "testperson": "TP48",
-          "problemDescription": "TP denkt vor allem an die KV"
-        },
-        {
-          "testperson": "TP54",
-          "problemDescription": "Bezieht sich nur auf die KV"
-        },
-        {
-          "testperson": "TP60",
-          "problemDescription": "zu allgemein gehalten, was wirklich mit der Frage gemeint ist, gesetzliche oder private Absicerhung"
-        },
-        {
-          "testperson": "TP66",
-          "problemDescription": "TP sagt, wenn man unterschiedliche Meinungen zu den einzelnen Punkten hat, dann wird es eher schwieriger."
-        },
-        {
-          "testperson": "TP70",
-          "problemDescription": "Unterschiedliche Aspekte, die erfragt werden."
-        },
-        {
-          "testperson": "TP81",
-          "problemDescription": "Keine Erfahrungen mit der AV, mit der RV auch nur sehr wenige"
-        },
-        {
-          "testperson": "TP83",
-          "problemDescription": "Wissen ist nicht vorhanden"
-        }
-      ]
-    }
-  ],
-  "q5": [
-    {
-      "id": 1,
-      "text": "Inwieweit stimmen Sie den folgenden Aussagen zu? Privatwirtschaft ist das beste Mittel zur Lösung der wirtschaftlichen Probleme Deutschlands. Skala: Stimme voll und ganz zu (1) - Stimme zu (2) - Weder noch (3) - Stimme nicht zu (4) - Stimme überhaupt nicht zu (5)",
-      "problems": [
-        {
-          "testperson": "TP06",
-          "problemDescription": "Fehlende Erfahrung/ Nicht-Wissen, Mehrere Stimuli (an die AV wird bei der Bewertung überhaupt nicht gedacht)"
-        },
-        {
-          "testperson": "TP12",
-          "problemDescription": "TP frage nach, was denn alles zu Privatwirtschaft zählt"
-        },
-        {
-          "testperson": "TP18",
-          "problemDescription": "Unklarheit bzgl. des Begriffs Privatwirtschaft; Frage wird missverstanden"
-        },
-        {
-          "testperson": "TP20",
-          "problemDescription": "Intention der Frage wird falsch verstanden"
-        },
-        {
-          "testperson": "TP38",
-          "problemDescription": "Je nach Fachgebiet oder Kenntnisstand können Menschen sehr unterschiedliche Definitionen haben, was Privatwirtschaft bedeutet"
-        },
-        {
-          "testperson": "TP40",
-          "problemDescription": "Privatwirtschaft"
-        },
-        {
-          "testperson": "TP44",
-          "problemDescription": "die beiden Items beeinflussen sich wechselseitig"
-        },
-        {
-          "testperson": "TP46",
-          "problemDescription": "Definition von Privatwirtschaft scheint nicht ganz klar zu sein"
-        },
-        {
-          "testperson": "TP50",
-          "problemDescription": "Wirtschaftliche Probleme zu vage"
-        },
-        {
-          "testperson": "TP54",
-          "problemDescription": "Wusste nicht was mit Privatwirtschaft gemeint ist, versteht auch eine Art Selbstständigkeit darunter"
-        },
-        {
-          "testperson": "TP56",
-          "problemDescription": "Was man unter Privatwirtschaft versteht, das könnte man besser formulieren, ein anderer Ausdruck. Dem Begriff müsste noch etwas gegenüber stehen."
-        },
-        {
-          "testperson": "TP60",
-          "problemDescription": "Was ist mit Privatwirtschaft gemeint"
-        },
-        {
-          "testperson": "TP61",
-          "problemDescription": "Privatwirtschaft sagt der TP nichts, sie sagt, dass sie eigentlich geraten hat"
-        },
-        {
-          "testperson": "TP78",
-          "problemDescription": "Was sind wirtschaftliche Probleme?"
-        },
-        {
-          "testperson": "TP80",
-          "problemDescription": "\"wirtschaftliche Probleme\" ist zu allgemein"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "text": "Inwieweit stimmen Sie den folgenden Aussagen zu? Es ist Aufgabe des Staates, die Einkommensunterschiede zwischen den Leuten mit hohem Einkommen und solchen mit niedrigem Einkommen zu verringern. Skala: Stimme voll und ganz zu (1) - Stimme zu (2) - Weder noch (3) - Stimme nicht zu (4) - Stimme überhaupt nicht zu (5)",
-      "problems": [
-        {
-          "testperson": "TP34",
-          "problemDescription": "TP bezieht es eher auf Sozialleistungen"
-        },
-        {
-          "testperson": "TP66",
-          "problemDescription": "Die Antwortoption \"weder noch\" passt nicht zu dieser Aussage."
-        },
-        {
-          "testperson": "TP68",
-          "problemDescription": "Inhalt der Aussage ist für die TP nicht klar. Ist es eine Frage, was ich möchte oder wer dafür zuständig sein sollte"
-        }
-      ]
-    }
-  ]
+  "q3": {
+    "TP28": "TP lässt Unsicherheit erkennen: was mit demokratischen Einrichtungen genau gemeint ist",
+    "TP34": "TP versteht den Begriff \"demokratische Einrichtungen\" nicht",
+    "TP36": "Begriff \"demokratische Einrichtungen\" wird mit sozialen Einnrichtungen gleichgesetzt",
+    "TP42": "Skala ist zu lang, daher Einordnung schwierig",
+    "TP46": "Demokratische Einrichtungen ist zu schwammig",
+    "TP48": "TP ist unsicher, was damit alles gemeint ist",
+    "TP58": "Demokratische Einrichtungen, Beispiele wären hilfreich",
+    "TP61": "vager Begriff",
+    "TP64": "Demokratische Einrichtungen ist sehr weit gefasst",
+    "TP68": "Was sind die demokratischen Einrichtungen?",
+    "TP80": "Demokratische Einrichtungen",
+    "TP81": "Demokratische Einrichtungen"
+  },
+  "q4": {
+    "TP10": "Fehlende Erfahrung/ Nicht-Wissen, Mehrere Stimuli (an die AV wird bei der Bewertung überhaupt nicht gedacht)",
+    "TP14": "TP bezieht Antwort vor allem auf die Rentenversicherung",
+    "TP18": "TP bezieht sich vor allem auf die KV, arkumentiert hier auch eher in Richtung Unzufriedenheit, alles zu teuer, wird zu wenig bezahlt (Skala verdreht? - Auf Nachfrage sagt sie zwar nein, aber das ist nicht sehr überzeugend)",
+    "TP26": "3 verschiedene Konzepte",
+    "TP38": "Dreiklang aus drei verschiedenen Sachen. Alle drei Sachen auf einen Punkt zu bringen ist Abwägungssache und das fällt der TP relativ schwer. Die einzelnen Punkte hätte er sehr unterschiedlich bewertet. Fehlende eigene Erfahrung bei AV und RV.",
+    "TP42": "TP bezieht sich vor allem auf die KV",
+    "TP48": "TP denkt vor allem an die KV",
+    "TP54": "Bezieht sich nur auf die KV",
+    "TP60": "zu allgemein gehalten, was wirklich mit der Frage gemeint ist, gesetzliche oder private Absicerhung",
+    "TP66": "TP sagt, wenn man unterschiedliche Meinungen zu den einzelnen Punkten hat, dann wird es eher schwieriger.",
+    "TP70": "Unterschiedliche Aspekte, die erfragt werden.",
+    "TP81": "Keine Erfahrungen mit der AV, mit der RV auch nur sehr wenige",
+    "TP83": "Wissen ist nicht vorhanden"
+  },
+  "q7": {
+    "TP10": "TP nicht sicher darüber war, was mit ungerecht oder schädlich gemeint ist",
+    "TP22": "TP versteht die Frage inhaltlich, war aber von dem Begriff \"schädlich\" irritiert",
+    "TP26": "\"Unternehmen\" ist nicht ganz eindeutig, darunter könnten die Befragten sehr unterschiedliche Sachen verstehen",
+    "TP66": "Ungerecht und schädlich sind zwei verschiedene paar Sachen",
+    "TP68": "Schwieriger Satz",
+    "TP80": "TP fragt sich, wann ein Gesetz schädlich ist",
+    "TP83": "ungerecht oder schädlich ist zu vage"
+  },
+  "q8": {
+    "TP2": "TP hat Ausfüllanweisung weder am PC noch auf Papier überhaupt gesehen (zu klein, geht unter)",
+    "TP58": "Muss nicht das wahre Verhalten widerspiegeln",
+    "TP68": "TP findet, dass die letzte Antwort nicht zur Frage passt, hat er in diesem Zusammenhang nicht verstanden.",
+    "TP78": "Antwort passt nicht zur Frage",
+    "TP80": "Formulierung hat die TP irritiert, das doppelte (Einfluss nehmen / Standpunkt zur Geltung bringen)"
+  },
+  "q12": {
+    "TP18": "TP fragt ob akzeptabel \"ja\" bedeutet und das andere \"nein\"?",
+    "TP32": "Effekt der sozialen Erwünschtheit, man möchte es machen wollen, aber ob es dann wirklich so ist, ist eine andere Frage",
+    "TP34": "Ausführungen sind unklar, Intention der Frage wird nicht eindeutig verstanden",
+    "TP60": "TP sagt, dass das darauf ankommt, wo ich meinen Lebensstandard einschränken muss und wie sehr ich mich einschränken muss. Es war schwer das allgemein zu sagen, ja ich mache es auf jeden Fall oder nicht. Es hängt davon ab, inwieweit das was bringt."
+  },
+  "q13": {
+    "TP32": "TP sagt, dass das für sie zutrifft, das muss aber nicht für jedermann gelten. Was ist mit Familie gemeint, Familie gründen oder die Eltern, Tanten und Onkel? -> unklare Frage",
+    "TP44": "TP ergänzt für sich Freunde, weil sie Familie zu eng gefasst findet TP definiert Familie als \"verwandt\" sein",
+    "TP78": "Es wird nicht die eigene Meinung erfragt"
+  },
+  "q15": {
+    "TP2": "TP schwankt zwischen 6-10 und 11-20. TP hat an Urlaub gedacht und dann angefangen zu rechnen",
+    "TP10": "TP zählt Familie nicht dazu und den Freund auch nicht. TP schwankt zwischen 21-30 und mehr als 30 Nächte. TP hat versucht zu zählen, aber 12 Monate ist lang, sie gibt auf.",
+    "TP16": "Was gehört dazu",
+    "TP24": "TP zählt auch seine Nachtschichten mit in diese Frage ein, es kann also sehr unterschiedlich sein, was die Leute darunter verstehen (ob Freizeit, aber auch Arbeit, Aufenthalte im Gefängnis etc)",
+    "TP26": "Hatte was vergessen",
+    "TP36": "Schätzung der TP",
+    "TP38": "Zählt Krankenhaus dazu. TP sagt, er habe grob überschlagen, da 12 Monate schon sehr lang sind",
+    "TP50": "Lange Referenzperiode",
+    "TP52": "Nur private oder auch geschäftliche Übernachtungen, da werden sich die Leute unterscheiden, was sie alles einbeziehen",
+    "TP56": "TP ist unklar, was die Frage soll, was man damit erfassen will",
+    "TP64": "TP war nicht klar, ob die Übernachtungen bei ihrem Partner einzurechnen sind. Es müsste deutlicher gemacht werden, was alles dazu zählt, je nach Intention der Frage",
+    "TP66": "Schätzung der TP",
+    "TP68": "TP wusste nicht genau, was da alles mit gemeint ist. Nur Urlaub oder auch Diensteisen",
+    "TP70": "Schätzung der TP",
+    "TP72": "Schätzung der TP. Kann sich unterscheiden, bei ihm war das letzte Jahr ein eher untypisches Jahr",
+    "TP76": "Ist nur eine ungefähre Schätzung"
+  },
+  "q16": {
+    "TP6": "Was ist ein normaler Wochentag? Gehört das Wochenende dazu oder heißt das Werktags. TP zählt im KI das WE dazu, sagt aber später bei Wochentag hätte er es nicht mit einbezogen.",
+    "TP10": "TP fiel die Zuordnung schwer",
+    "TP12": "TP zählt Internet und Facebook nicht zu persönlich und hat diese Personen weggelassen",
+    "TP22": "Zuordnung zu den Kategorien fiel etwas schwer, welche genau es ist",
+    "TP42": "Man kann es laut TP nicht genau sagen",
+    "TP58": "Frage nicht spezifisch genug",
+    "TP60": "TP wusste nicht, was mit kennen gemeint ist. Ist es, wenn ich jemanden gut kenne oder wenn ich mit der Person zweimal gesprochen habe.",
+    "TP66": "Unterscheidet sich je nach Wochentag",
+    "TP68": "Internetkontakte nicht berücksichtigt",
+    "TP83": "Jeder Tag ist unterschiedlich. Antwort ist geschätzt"
+  },
+  "q17": {
+    "TP10": "Gehört Fernsehen über das Internet dazu?",
+    "TP16": "zu detaillierte Abfrage. TP stellt sich die Frage, was alles dazu zählt.",
+    "TP48": "TP gibt an, dass die Antwort geschätzt ist",
+    "TP66": "Auch sehr unterschiedlich",
+    "TP68": "TP denkt nur an Spielfilme, nicht an Nachrichten",
+    "TP70": "TP bezieht Fernsehen auf das Gerät und nicht auf das Ausweichen auf andere Medien, wie z.B. über das Internet.",
+    "TP72": "Schwankt",
+    "TP76": "TP kann es nicht so generell sagen. Es ist mal so und mal so.",
+    "TP78": "TP sagt, eigentlich kann er es nicht beantworten, weil er 2-3 Tage angeben würde, was dann aber nicht in die Kategorien passt"
+  },
+  "q18": {
+    "TP10": "\"Seltener\" wurde lange fixiert. TP war sich unsicher, ob es dazu zählt, wenn sie sich auf der ARD Seite mal einen Clip ansieht und war hin- und hergerissen zwischen \"selten\" und \"nie\"",
+    "TP60": "Es ist keine Regelmäßigkeit vorhanden"
+  },
+  "q20": {
+    "TP14": "TP fehlt eine Kategorie dazwischen",
+    "TP16": "TP hätte eigentlich \"mindestens einmal die Woche\" nehmen müssen, nimmt aber täglich, weil ihm dazwischen was gefehlt hat",
+    "TP42": "zu vage, was damit genau gemeint ist",
+    "TP60": "Testperson wusste nicht, ob nur PC oder auch Smartphones, davon hing die Antwort entschieden ab",
+    "TP61": "Kategorien sind zu breit, unterschied zwischen \"täglich\" und \"einmal die Woche\" ist zu groß.",
+    "TP81": "Kategorienschema zu breit"
+  },
+  "q21": {
+    "TP6": "TP deutet das Wort \"übervorteilen\" falsch, als etwas positives. Deswegen meint TP der negative Pol, also Schaden und nicht fair verhalten würde komplett fehlen -> damit wird die Intention der Frage missverstanden",
+    "TP8": "Das Wort \"übervorteilen\" ist der TP nicht geläufig.",
+    "TP10": "TP sagt, sie war nicht sicher, was \"übervorteilen\" bedeutet, also in welche Richtung das geht, also wer ist dann im Vorteil, ich oder der Andere. Wollte erst fragen, das war ihr dann aber zu peinlich.",
+    "TP12": "TP kennt \"übervorteilen nicht\", fragt, ob das überhaupt existiert",
+    "TP14": "TP war \"übervorteilen\" einfach nicht klar, erst als bevorteilen und dann aber aus den Fragen geschlossen, dass es das Gegenteil sein muss, also benachteiligen.",
+    "TP18": "TP versteht \"übervorteilen\" im Sinne von \"überreden\"",
+    "TP30": "Formulierung der Frage ist komisch, \"übervorteilen\"",
+    "TP32": "Antwortkategorien sind sehr ähnlich, TP sieht keinen großen Unterschied zwischen \"fast immer\" und \"meistens\"",
+    "TP34": "TP weiß die Bedeutung von \"übervorteilen\" nicht",
+    "TP38": "Überleitung wäre günstig, Frageformulierung ist schwierig",
+    "TP42": "Vielleicht, dass die Antwortkategorien nicht genug differenzieren",
+    "TP48": "Übervorteilen war nicht gleich ein Begriff, was damit gemeint ist",
+    "TP54": "Weiß nicht, worauf die Frage abzielt. Welche Leute? Was ist mit passender Gelegenheit gemeint? In welchem Bereich?",
+    "TP60": "Übervorteilen stört in TPder Frage. TP dachte zunächst, dass sie mehrere Antworten auswählen könnte",
+    "TP61": "\"übervorteilen\" unbekannt, passende Gelegenheit zu ungenau (gecodet als 1, Frage zu unspezifisch)",
+    "TP64": "\"Übervorteilen\" wird falsch verstanden. Versteht es als jemandem \"eher einen Vorteil als einen Nachteil zu verschaffen\"",
+    "TP66": "zu pauschal, andere Leute.",
+    "TP72": "Übervorteilen durch Kontext erklärt, sonst hätte TP gedacht, dass es um mehr Vorteile geht",
+    "TP80": "zu verschachtelt. Was soll eine passende Gelegenheit sein, Übervorteilen auch nicht ganz klar"
+  },
+  "q22": {
+    "TP42": "Antwortkategorien sind nicht trennschaft und zu ähnlich für die TP",
+    "TP52": "TP sieht keinen Unterschied zwischen \"normalerweise\" und \"fast immer\"",
+    "TP58": "Antworten sind so absolut, TP wollte sich nicht widersprechen",
+    "TP61": "Menschen ist ein sehr weiter Begriff, TP hatte das Gefühl, dass sie der vorhergehenden Frage (Q21) mit ihrer Antwort widerspricht"
+  },
+  "q23": {
+    "TP16":	"22, 25"
+  }
 }
