@@ -5,11 +5,9 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-var connectedPeers = {};
-
 app.set('port', (process.env.PORT || 9000));
 
-app.use(express.static(__dirname + "/public/"));
+app.use(express.static(__dirname + "/public"));
 
 io.on('connection', function(socket){
   console.log('a user connected');

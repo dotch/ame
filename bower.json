@@ -1,0 +1,25 @@
+{
+  "name": "ame",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dotch/ame",
+  "authors": [
+    "dotch <christian.x.weiss@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "c3": "~0.4.10",
+    "fabric": "~1.4.13",
+    "handlebars": "~3.0.0",
+    "lodash": "~3.6.0",
+    "fetch": "~0.7.0",
+    "es6-promise": "~2.0.1"
+  }
+}

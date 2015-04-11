@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "extract": "node --expose_gc scripts/extractAll.js",
-    "convert": "./scripts/convert.sh"
+    "convert": "./scripts/convert.sh",
+    "analyze": "node scripts/analyze.js"
   },
   "author": "",
   "license": "ISC",

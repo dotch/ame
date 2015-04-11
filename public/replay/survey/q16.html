@@ -1,0 +1,344 @@
+
+<!-- saved from url=(0095)https://www.unipark.de/uc/GESIS_Pretestlabor/306d/ospe.php?SES=a481fbc17b79cdbd6b0ff93867809719 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Umfrage</title>
+<script charset="UTF-8" type="text/javascript">
+function silenterror() {
+ return true;
+}
+window.onerror=silenterror;
+</script><noscript></noscript>
+
+<meta http-equiv="imagetoolbar" content="no">
+<link rel="stylesheet" href="https://www.unipark.de/uc/GESIS_Pretestlabor/306d/css/layout.css">
+<meta name="generator" content="EFS - Enterprise Feedback Suite - http://www.globalpark.com">
+<script charset="UTF-8" type="text/javascript">
+var baseurl="";
+var base_all_url="https://www.unipark.de/";
+</script>
+<meta name="generator" content="EFS - Enterprise Feedback Suite - http://www.globalpark.com">
+<script charset="UTF-8" type="text/javascript">
+var baseurl="";
+var base_all_url="https://www.unipark.de/";
+</script>
+<script charset="UTF-8" type="text/javascript" src="q16_files/but_fast.js"></script><noscript></noscript>
+<script charset="UTF-8" type="text/javascript">loadImages('layout/1_r1.gif','layout/1_r2.gif','layout/1_r3.gif','layout/1_c1.gif','layout/1_c2.gif','layout/1_c3.gif');
+</script><noscript></noscript><script charset="UTF-8" type="text/javascript" src="q16_files/default.js"></script>
+<script charset="UTF-8" type="text/javascript" src="q16_files/new_plausichecks.js"></script>
+<script charset="UTF-8" type="text/javascript">
+var it=new Array;
+it[796]=0;
+var cdef=new Array;
+var rdef=new Array;
+cdef[0]='layout/1_c1.gif';
+cdef[1]='layout/1_c2.gif';
+cdef[2]='layout/1_c3.gif';
+rdef[0]='layout/1_r1.gif';
+rdef[1]='layout/1_r2.gif';
+rdef[2]='layout/1_r3.gif';
+var cimg=new Array;
+
+</script><noscript></noscript>
+
+
+
+ 
+
+<!-- 
+UCSP6, angepasst mit 3 Zusatzvariablen für direkte Zeitspeicherung
+-->
+<!-- ################ main ################ -->
+<script charset="UTF-8" type="text/javascript">
+
+// define global variables
+var start;
+var startms;
+var lastms;
+var clickcount;
+var time2lastclick;
+var time2firstclick;
+var time2secondlastclick;
+var dblclickcount;
+var p_x;
+var p_y;
+var scrollx;
+var scrolly;
+var scrollxprev;
+var scrollyprev;
+var winx;
+var winy;
+var visits;
+var dac;
+var prefill0;
+var time2firstkey;
+var time2lastkey;
+var msfirstkey;
+var mslastkey;
+var cntblur;
+var timeblur;
+var active_element;
+var bIsMSIE = false;
+
+function short(s)
+{
+	if (s==undefined || s=='') { return 'u'; } else { return s; }
+}
+
+function returnfirstdefined(a, b, c) 
+{
+	if (!(a=='u')) return a;
+	if (!(b=='u')) return b;
+	if (!(c=='u')) return c;
+	return 'u';
+}
+
+// event handler for mouse events
+function mousetracker(e)
+{
+	// check objects before fetch
+	// Firefox, etc.
+	if (e) {
+		if (e.target) {
+			p_targetname=short(e.target.name);
+			p_targetid=short(e.target.id);
+			p_targetvalue=short(e.target.value);
+			p_targettag=short(e.target.tagName);
+			if (e.target.firstChild) p_targetlabel=short(e.target.firstChild.nodeValue); 
+		}
+		if (e.clientX) p_x=short(e.clientX);
+		if (e.clientY) p_y=short(e.clientY);
+	}
+	if (window.pageXOffset) scrollx=window.pageXOffset;
+	if (window.pageYOffset) scrolly=window.pageYOffset;
+	if (window.innerHeight) winy=window.innerHeight;
+	if (window.innerWidth) winx=window.innerWidth;
+	// IE
+	if (document.all) { 
+		if (event) {
+			if (event.srcElement) {
+				p_targetname=short(event.srcElement.name);
+				p_targetid=short(event.srcElement.id);
+				p_targetvalue=short(event.srcElement.value);
+				p_targettag=short(event.srcElement.tagName);
+				p_targetlabel=short(event.srcElement.innerText); 
+			}
+			if (event.clientX) { p_x=short(event.clientX); }
+			if (event.clientY) { p_y=short(event.clientY); }
+		}
+		if (document) {
+			if (document.body) {
+				if (document.body.scrollLeft) scrollx=document.body.scrollLeft;
+				if (document.body.scrollTop) scrolly=document.body.scrollTop;
+				if (document.body.clientHeight) winy=document.body.clientHeight;
+				if (document.body.clientWidth) winx=document.body.clientWidth;
+			}
+		}
+	}
+	// save only max scroll to bottom and right
+	if (scrollx > scrollxprev) scrollxprev = scrollx;
+	if (scrolly > scrollyprev) scrollyprev = scrolly;
+	// fetch time of event
+	var datenow = new Date();
+	var nowms = datenow.getTime();
+	var dummy = lastms;
+	lastms = nowms;
+	// first order paradata
+	var diffabs = nowms - startms;
+	var diffrel = nowms - dummy ;
+	var item = returnfirstdefined(p_targetid, p_targetname, p_targettag);
+	if (lowercase(item) == 'label') item = p_targetlabel;
+	// clickcount = number of clicks, any mouse click
+	clickcount++;
+	time2secondlastclick =time2lastclick;
+	time2lastclick =diffabs;
+	if (time2firstclick ==0) { time2firstclick=diffabs; }
+	// save
+	p_abs.value += item + ";";
+	p_rel.value += diffrel + ";";
+	p_extra.value += "(tm="+diffabs+";id="+p_targetid+";nm="+p_targetname+";vl="+p_targetvalue+";tg="+p_targettag+";x="+p_x+";y="+p_y+")";
+	set_p_misc_value();
+	p_5.value = time2firstclick;
+	p_6.value = time2secondlastclick;
+	p_7.value = time2lastclick;
+}
+
+
+// event handler for keystrokes
+function keytracker(e)
+{
+	if (!e)	e = window.event;
+	// fetch keycode
+	if (e.which) {
+		code = e.which;
+	} else if (e.keyCode) {
+		code = e.keyCode;
+	}
+	var num = parseInt(code);
+	if (num>31 && num<126) {
+		code = String.fromCharCode(num);
+	} else {
+		code = '['+code+']'
+	}
+	p_keystroke.value += code;
+
+	// fetch time of event
+	var msdatenowkey = new Date();
+	var msnowkey = msdatenowkey.getTime();
+	var keydummy = mslastkey;
+	var diffabs = msnowkey - startms;
+	mslastkey= diffabs;
+	if (msfirstkey==0) { msfirstkey=diffabs; }
+	set_p_misc_value();
+}
+
+function countdblcklicks(e)
+{
+	dblclickcount++;
+	mousetracker(e);
+}
+
+// set information for second order paradata
+function set_p_misc_value()
+{
+	p_misc.value = "#6#"+visits+";"+dac+";"+time2firstclick+";"+time2secondlastclick+";"+time2lastclick+";"+clickcount+";"+dblclickcount+';'+winx+';'+winy+";"+scrollxprev+';'+scrollyprev+";"+msfirstkey+";"+mslastkey+";"+cntblur+";"+timeblur+";"+prefill0;
+}
+
+function windowlostfocus()
+{ 
+	if (bIsMSIE && (active_element != document.activeElement)) {
+	active_element = document.activeElement;
+	}
+	else {
+	cntblur++;
+	var datenow = new Date();
+	var nowms = datenow.getTime();
+	var diffabs = nowms - startms;
+	timeblur= diffabs;
+	set_p_misc_value();
+	}
+}
+
+function init_ucsp() 
+{
+if (p_misc.value.length > 0) { 
+    visits= p_misc.value.substring(3, p_misc.value.indexOf(";"));
+    visits++;
+    if (p_misc.value.indexOf("dac")>0) { dac="dac"; } else { dac=0; }
+    if (document.getElementById("DACactive")) { visits--; dac="dac"; }
+    prefill0 = p_misc.value;
+    prefill0 = prefill0.replace(/;/g, "/")
+} else { visits= 0; prefill0="0"; dac= 0; } 
+start = new Date();
+startms = start.getTime();
+lastms = start.getTime();
+clickcount =0;
+time2lastclick =0;
+time2firstclick =0;
+time2secondlastclick =0;
+dblclickcount =0;
+scrollxprev =0;
+scrollyprev =0;
+msfirstkey=0;
+mslastkey=0;
+cntblur=0;
+timeblur=0;
+set_p_misc_value();
+document.onkeydown = keytracker;
+document.onmousedown = mousetracker;
+document.ondblclick = countdblcklicks;
+if (navigator.appName == "Microsoft Internet Explorer") {
+	active_element = document.activeElement;
+	document.onfocusout = windowlostfocus;
+	bIsMSIE = true;
+}
+else { 
+	window.onblur = windowlostfocus; 
+}
+}
+
+</script>
+<!-- ################ end main ################ -->
+</head>
+<body class="body" leftmargin="25" marginwidth="25" marginheight="0" topmargin="0" onload="preset_buttons();textfocus(1);"><div id="pgid4214497" align="center"><img src="q16_files/t.gif" width="1" height="60" border="0" alt=""><br><table bordercolor="grey" border="0" cellspacing="0" width="950" cellpadding="0" class="globaltable"><tbody><tr><td><table bordercolor="yellow" border="0" cellspacing="0" width="100%" cellpadding="0" class="logo"><tbody><tr><td class="logo3"><img src="q16_files/GESIS_Logo_informell_30.jpg" border="0" alt=""></td></tr></tbody></table><hr class="hrstyle"><img src="q16_files/pixel_t.gif" width="1" height="15" border="0" alt=""><br><form style="margin:0; padding:0;" method="post" name="f1" action="./q16_files/q16.html" onsubmit="" autocomplete="off"><input type="hidden" name="act" value="send">
+<input type="hidden" name="pg_code" value="4214497f1749d9b5a">
+<input type="image" src="q16_files/t.gif" alt="" width="0" height="0" border="0"><div class="globaltable2"><!-- Begin START QUESTION TABLE FROM main.tpl --><input type="hidden" name="v_796" value="0">
+
+<div id="questiontable"><div class="qt111"><div id="qnameq4921885">
+<table cellpadding="0" cellspacing="0" width="100%" border="0" bordercolor="green">
+ <tbody><tr>
+  <td class="questiontext"><a name="1"> </a>16. Mit wie vielen Menschen haben Sie im Durchschnitt an einem normalen Wochentag Kontakt? Wir meinen Kontakte mit einzelnen Personen, also wenn Sie mit jemandem reden oder diskutieren. Dies kann persönlich, telefonisch, brieflich oder über das Internet sein. Zählen Sie nur die Menschen, die Sie kennen, und denken Sie bitte auch an die, mit denen Sie zusammenwohnen.
+    </td>
+ </tr>
+  </tbody></table><img alt="" src="q16_files/t.gif" width="1" height="20" border="0"><br>
+<table border="0" class="answertable" bordercolor="purple" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="answerelement" nowrap=""><nobr><img src="q16_files/t.gif" width="5" height="1" border="0" alt=""><a href="javascript:icl(1,796,'');" onmouseover="iov(1,796,&#39;&#39;,&#39;0-4 Personen&#39;);return true;" onmouseout="iou(1,796,&#39;&#39;);"><img alt="0-4 Personen" title="0-4 Personen" name="v_796_1" src="q16_files/1_r1.gif" border="0" align="middle"></a><img src="q16_files/t.gif" width="5" height="1" border="0" alt="" align="middle"></nobr></td>
+<td class="answertext" width="100%"><label for="v_796x1">0-4 Personen</label></td>
+</tr>
+<tr>
+<td colspan="2"><img src="q16_files/t.gif" width="1" height="15" border="0" alt=""><br></td>
+</tr>
+<tr>
+<td class="answerelement" nowrap=""><nobr><img src="q16_files/t.gif" width="5" height="1" border="0" alt=""><a href="javascript:icl(2,796,'');" onmouseover="iov(2,796,&#39;&#39;,&#39;5-9 Personen&#39;);return true;" onmouseout="iou(2,796,&#39;&#39;);"><img alt="5-9 Personen" title="5-9 Personen" name="v_796_2" src="q16_files/1_r1.gif" border="0" align="middle"></a><img src="q16_files/t.gif" width="5" height="1" border="0" alt="" align="middle"></nobr></td>
+<td class="answertext" width="100%"><label for="v_796x2">5-9 Personen</label></td>
+</tr>
+<tr>
+<td colspan="2"><img src="q16_files/t.gif" width="1" height="15" border="0" alt=""><br></td>
+</tr>
+<tr>
+<td class="answerelement" nowrap=""><nobr><img src="q16_files/t.gif" width="5" height="1" border="0" alt=""><a href="javascript:icl(3,796,'');" onmouseover="iov(3,796,&#39;&#39;,&#39;10-19 Personen&#39;);return true;" onmouseout="iou(3,796,&#39;&#39;);"><img alt="10-19 Personen" title="10-19 Personen" name="v_796_3" src="q16_files/1_r1.gif" border="0" align="middle"></a><img src="q16_files/t.gif" width="5" height="1" border="0" alt="" align="middle"></nobr></td>
+<td class="answertext" width="100%"><label for="v_796x3">10-19 Personen</label></td>
+</tr>
+<tr>
+<td colspan="2"><img src="q16_files/t.gif" width="1" height="15" border="0" alt=""><br></td>
+</tr>
+<tr>
+<td class="answerelement" nowrap=""><nobr><img src="q16_files/t.gif" width="5" height="1" border="0" alt=""><a href="javascript:icl(4,796,'');" onmouseover="iov(4,796,&#39;&#39;,&#39;20-49 Personen&#39;);return true;" onmouseout="iou(4,796,&#39;&#39;);"><img alt="20-49 Personen" title="20-49 Personen" name="v_796_4" src="q16_files/1_r1.gif" border="0" align="middle"></a><img src="q16_files/t.gif" width="5" height="1" border="0" alt="" align="middle"></nobr></td>
+<td class="answertext" width="100%"><label for="v_796x4">20-49 Personen</label></td>
+</tr>
+<tr>
+<td colspan="2"><img src="q16_files/t.gif" width="1" height="15" border="0" alt=""><br></td>
+</tr>
+<tr>
+<td class="answerelement" nowrap=""><nobr><img src="q16_files/t.gif" width="5" height="1" border="0" alt=""><a href="javascript:icl(5,796,'');" onmouseover="iov(5,796,&#39;&#39;,&#39;50 Personen oder mehr&#39;);return true;" onmouseout="iou(5,796,&#39;&#39;);"><img alt="50 Personen oder mehr" title="50 Personen oder mehr" name="v_796_5" src="q16_files/1_r1.gif" border="0" align="middle"></a><img src="q16_files/t.gif" width="5" height="1" border="0" alt="" align="middle"></nobr></td>
+<td class="answertext" width="100%"><label for="v_796x5">50 Personen oder mehr</label></td>
+</tr>
+<tr>
+<td colspan="2"><img src="q16_files/t.gif" width="1" height="15" border="0" alt=""><br></td>
+</tr>
+
+</tbody></table>
+</div></div></div><img alt="" src="q16_files/t.gif" width="1" height="15" border="0">
+
+
+
+
+
+<div id="questiontable"><div class="qt911"><div id="qnameq4947934"><input name="v_1258" value="#6#0;0;0;0;0;0;0;undefined;undefined;0;0;760;880;1;1502;0" type="hidden" size="2">
+<input name="v_1259" value="" type="hidden" size="2">
+<input name="v_1260" value="" type="hidden" size="2">
+<input name="v_1261" value="[S" type="hidden" size="2">
+<input name="v_1262" value="" type="hidden" size="2">
+<input name="v_1263" value="" type="hidden" size="6">
+<input name="v_1264" value="" type="hidden" size="6">
+<input name="v_1265" value="" type="hidden" size="6">
+<script charset="UTF-8" type="text/javascript">
+var p_misc = eval("document.forms[0].v_1258"); 
+var p_abs = eval("document.forms[0].v_1259"); 
+var p_rel = eval("document.forms[0].v_1260");
+var p_keystroke = eval("document.forms[0].v_1261");
+var p_extra = eval("document.forms[0].v_1262");
+var p_5 = eval("document.forms[0].v_1263");
+var p_6 = eval("document.forms[0].v_1264");
+var p_7 = eval("document.forms[0].v_1265");
+init_ucsp();
+</script></div></div></div><img alt="" src="q16_files/t.gif" width="1" height="15" border="0">
+
+
+
+
+<!-- Begin END QUESTION TABLE FROM main.tpl --></div><hr class="hrstyle"><table bordercolor="green" border="0" cellspacing="0" width="100%" cellpadding="0" class="globaltable2"><tbody><tr><td class="footer"><img src="q16_files/t.gif" width="5" height="5" border="0" alt=""><input type="hidden" value="0" name="__backb"><input type="hidden" value="0" name="__no_pc"><input id="os" class="submitbutton" type="submit" name="submit_button" value="Weiter" onclick="if(document.forms[&#39;f1&#39;] &amp;&amp; document.forms[&#39;f1&#39;].elements[&#39;__backb&#39;])document.forms[&#39;f1&#39;].elements[&#39;__backb&#39;].value=0;" alt="Weiter"></td></tr></tbody></table></form></td></tr></tbody></table><img src="q16_files/t.gif" width="1" height="15" border="0" alt=""><br></div>
+
+
+
+</body></html>

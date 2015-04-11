@@ -1,0 +1,262 @@
+
+<!-- saved from url=(0095)https://www.unipark.de/uc/GESIS_Pretestlabor/306d/ospe.php?SES=a481fbc17b79cdbd6b0ff93867809719 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Umfrage</title>
+<script charset="UTF-8" type="text/javascript">
+function silenterror() {
+ return true;
+}
+window.onerror=silenterror;
+</script><noscript></noscript>
+
+<meta http-equiv="imagetoolbar" content="no">
+<link rel="stylesheet" href="https://www.unipark.de/uc/GESIS_Pretestlabor/306d/css/layout.css">
+<meta name="generator" content="EFS - Enterprise Feedback Suite - http://www.globalpark.com">
+<script charset="UTF-8" type="text/javascript">
+var baseurl="";
+var base_all_url="https://www.unipark.de/";
+</script>
+<meta name="generator" content="EFS - Enterprise Feedback Suite - http://www.globalpark.com">
+<script charset="UTF-8" type="text/javascript">
+var baseurl="";
+var base_all_url="https://www.unipark.de/";
+</script>
+<script charset="UTF-8" type="text/javascript" src="q26_files/but_fast.js"></script><noscript></noscript>
+<script charset="UTF-8" type="text/javascript">loadImages('layout/1_r1.gif','layout/1_r2.gif','layout/1_r3.gif','layout/1_c1.gif','layout/1_c2.gif','layout/1_c3.gif');
+</script><noscript></noscript><script charset="UTF-8" type="text/javascript" src="q26_files/default.js"></script>
+<script charset="UTF-8" type="text/javascript" src="q26_files/new_plausichecks.js"></script>
+
+
+
+ 
+
+<!-- 
+UCSP6, angepasst mit 3 Zusatzvariablen für direkte Zeitspeicherung
+-->
+<!-- ################ main ################ -->
+<script charset="UTF-8" type="text/javascript">
+
+// define global variables
+var start;
+var startms;
+var lastms;
+var clickcount;
+var time2lastclick;
+var time2firstclick;
+var time2secondlastclick;
+var dblclickcount;
+var p_x;
+var p_y;
+var scrollx;
+var scrolly;
+var scrollxprev;
+var scrollyprev;
+var winx;
+var winy;
+var visits;
+var dac;
+var prefill0;
+var time2firstkey;
+var time2lastkey;
+var msfirstkey;
+var mslastkey;
+var cntblur;
+var timeblur;
+var active_element;
+var bIsMSIE = false;
+
+function short(s)
+{
+	if (s==undefined || s=='') { return 'u'; } else { return s; }
+}
+
+function returnfirstdefined(a, b, c) 
+{
+	if (!(a=='u')) return a;
+	if (!(b=='u')) return b;
+	if (!(c=='u')) return c;
+	return 'u';
+}
+
+// event handler for mouse events
+function mousetracker(e)
+{
+	// check objects before fetch
+	// Firefox, etc.
+	if (e) {
+		if (e.target) {
+			p_targetname=short(e.target.name);
+			p_targetid=short(e.target.id);
+			p_targetvalue=short(e.target.value);
+			p_targettag=short(e.target.tagName);
+			if (e.target.firstChild) p_targetlabel=short(e.target.firstChild.nodeValue); 
+		}
+		if (e.clientX) p_x=short(e.clientX);
+		if (e.clientY) p_y=short(e.clientY);
+	}
+	if (window.pageXOffset) scrollx=window.pageXOffset;
+	if (window.pageYOffset) scrolly=window.pageYOffset;
+	if (window.innerHeight) winy=window.innerHeight;
+	if (window.innerWidth) winx=window.innerWidth;
+	// IE
+	if (document.all) { 
+		if (event) {
+			if (event.srcElement) {
+				p_targetname=short(event.srcElement.name);
+				p_targetid=short(event.srcElement.id);
+				p_targetvalue=short(event.srcElement.value);
+				p_targettag=short(event.srcElement.tagName);
+				p_targetlabel=short(event.srcElement.innerText); 
+			}
+			if (event.clientX) { p_x=short(event.clientX); }
+			if (event.clientY) { p_y=short(event.clientY); }
+		}
+		if (document) {
+			if (document.body) {
+				if (document.body.scrollLeft) scrollx=document.body.scrollLeft;
+				if (document.body.scrollTop) scrolly=document.body.scrollTop;
+				if (document.body.clientHeight) winy=document.body.clientHeight;
+				if (document.body.clientWidth) winx=document.body.clientWidth;
+			}
+		}
+	}
+	// save only max scroll to bottom and right
+	if (scrollx > scrollxprev) scrollxprev = scrollx;
+	if (scrolly > scrollyprev) scrollyprev = scrolly;
+	// fetch time of event
+	var datenow = new Date();
+	var nowms = datenow.getTime();
+	var dummy = lastms;
+	lastms = nowms;
+	// first order paradata
+	var diffabs = nowms - startms;
+	var diffrel = nowms - dummy ;
+	var item = returnfirstdefined(p_targetid, p_targetname, p_targettag);
+	if (lowercase(item) == 'label') item = p_targetlabel;
+	// clickcount = number of clicks, any mouse click
+	clickcount++;
+	time2secondlastclick =time2lastclick;
+	time2lastclick =diffabs;
+	if (time2firstclick ==0) { time2firstclick=diffabs; }
+	// save
+	p_abs.value += item + ";";
+	p_rel.value += diffrel + ";";
+	p_extra.value += "(tm="+diffabs+";id="+p_targetid+";nm="+p_targetname+";vl="+p_targetvalue+";tg="+p_targettag+";x="+p_x+";y="+p_y+")";
+	set_p_misc_value();
+	p_5.value = time2firstclick;
+	p_6.value = time2secondlastclick;
+	p_7.value = time2lastclick;
+}
+
+
+// event handler for keystrokes
+function keytracker(e)
+{
+	if (!e)	e = window.event;
+	// fetch keycode
+	if (e.which) {
+		code = e.which;
+	} else if (e.keyCode) {
+		code = e.keyCode;
+	}
+	var num = parseInt(code);
+	if (num>31 && num<126) {
+		code = String.fromCharCode(num);
+	} else {
+		code = '['+code+']'
+	}
+	p_keystroke.value += code;
+
+	// fetch time of event
+	var msdatenowkey = new Date();
+	var msnowkey = msdatenowkey.getTime();
+	var keydummy = mslastkey;
+	var diffabs = msnowkey - startms;
+	mslastkey= diffabs;
+	if (msfirstkey==0) { msfirstkey=diffabs; }
+	set_p_misc_value();
+}
+
+function countdblcklicks(e)
+{
+	dblclickcount++;
+	mousetracker(e);
+}
+
+// set information for second order paradata
+function set_p_misc_value()
+{
+	p_misc.value = "#6#"+visits+";"+dac+";"+time2firstclick+";"+time2secondlastclick+";"+time2lastclick+";"+clickcount+";"+dblclickcount+';'+winx+';'+winy+";"+scrollxprev+';'+scrollyprev+";"+msfirstkey+";"+mslastkey+";"+cntblur+";"+timeblur+";"+prefill0;
+}
+
+function windowlostfocus()
+{ 
+	if (bIsMSIE && (active_element != document.activeElement)) {
+	active_element = document.activeElement;
+	}
+	else {
+	cntblur++;
+	var datenow = new Date();
+	var nowms = datenow.getTime();
+	var diffabs = nowms - startms;
+	timeblur= diffabs;
+	set_p_misc_value();
+	}
+}
+
+function init_ucsp() 
+{
+if (p_misc.value.length > 0) { 
+    visits= p_misc.value.substring(3, p_misc.value.indexOf(";"));
+    visits++;
+    if (p_misc.value.indexOf("dac")>0) { dac="dac"; } else { dac=0; }
+    if (document.getElementById("DACactive")) { visits--; dac="dac"; }
+    prefill0 = p_misc.value;
+    prefill0 = prefill0.replace(/;/g, "/")
+} else { visits= 0; prefill0="0"; dac= 0; } 
+start = new Date();
+startms = start.getTime();
+lastms = start.getTime();
+clickcount =0;
+time2lastclick =0;
+time2firstclick =0;
+time2secondlastclick =0;
+dblclickcount =0;
+scrollxprev =0;
+scrollyprev =0;
+msfirstkey=0;
+mslastkey=0;
+cntblur=0;
+timeblur=0;
+set_p_misc_value();
+document.onkeydown = keytracker;
+document.onmousedown = mousetracker;
+document.ondblclick = countdblcklicks;
+if (navigator.appName == "Microsoft Internet Explorer") {
+	active_element = document.activeElement;
+	document.onfocusout = windowlostfocus;
+	bIsMSIE = true;
+}
+else { 
+	window.onblur = windowlostfocus; 
+}
+}
+
+</script>
+<!-- ################ end main ################ -->
+</head>
+<body class="body" leftmargin="25" marginwidth="25" marginheight="0" topmargin="0" onload="preset_buttons();textfocus(1);"><div id="pgid4214508" align="center"><img src="q26_files/t.gif" width="1" height="60" border="0" alt=""><br><table bordercolor="grey" border="0" cellspacing="0" width="950" cellpadding="0" class="globaltable"><tbody><tr><td><table bordercolor="yellow" border="0" cellspacing="0" width="100%" cellpadding="0" class="logo"><tbody><tr><td class="logo3"><img src="q26_files/GESIS_Logo_informell_30.jpg" border="0" alt=""></td></tr></tbody></table><hr class="hrstyle"><img src="q26_files/pixel_t.gif" width="1" height="15" border="0" alt=""><br><form style="margin:0; padding:0;" method="post" name="f1" action="./q26_files/q26.html" onsubmit="" autocomplete="off"><input type="hidden" name="act" value="send">
+<input type="hidden" name="pg_code" value="4214508f1749d9b5a">
+<input type="image" src="q26_files/t.gif" alt="" width="0" height="0" border="0"><div class="globaltable2"><!-- Begin START QUESTION TABLE FROM main.tpl -->
+<div id="questiontable"><div class="qt998"><div id="qnameq435658"><b><big>Vielen Dank. Sie haben nun das Ende dieses Teils der Befragung erreicht. </big></b><big> <p></p>
+
+<b> Bitte geben Sie kurz der Testleitung Bescheid. </b></big></div></div></div><big><img alt="" src="q26_files/t.gif" width="1" height="15" border="0">
+
+
+
+
+<!-- Begin END QUESTION TABLE FROM main.tpl --></big></div><hr class="hrstyle"><table bordercolor="green" border="0" cellspacing="0" width="100%" cellpadding="0" class="globaltable2"><tbody><tr><td class="footer"><img src="q26_files/t.gif" width="5" height="5" border="0" alt=""></td></tr></tbody></table></form></td></tr></tbody></table><img src="q26_files/t.gif" width="1" height="15" border="0" alt=""><br></div>
+
+
+
+</body></html>
