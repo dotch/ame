@@ -9,32 +9,24 @@ function createPlots(data) {
 }
 
 function createPlot(questionData) {
-  var question = _.sortByAll(questionData,['backJumpsCount', 'fixationQuestionTextCount']);
+  var correctData = _.filter(questionData,'problem', false);
+  var correctFixations = ['correct'].concat(_.pluck(correctData,'fixationQuestionTextCount'));
+  var correctJumps = ['correct_jumps'].concat(_.pluck(correctData,'backJumpsCount'));
+  var problemData = _.filter(questionData,'problem');
+  var problemFixations = ['problem'].concat(_.pluck(problemData,'fixationQuestionTextCount'));
+  var problemJumps = ['problem_jumps'].concat(_.pluck(problemData,'backJumpsCount'));
   var chart = c3.generate({
-    size: {
-      height: 500,
-      width: 500
-    },
+    size: { height: 500, width: 500 },
     data: {
-      json: question,
-      keys: {
-        value: ['fixationQuestionTextCount'],
-        x: 'backJumpsCount'
+      xs: {
+        correct: 'correct_jumps',
+        problem: 'problem_jumps'
       },
+      columns: [
+        correctJumps, correctFixations,
+        problemJumps, problemFixations
+      ],
       type: 'scatter',
-      color: function (color, d) {
-        // d will be 'id' when called for legends
-        if (!d.id) { return; }
-        // get the index by searching for a match on
-        // backJumps and fixation count
-        var index = question.map(function(el, index) {
-          if (el.backJumpsCount === d.x && el.fixationQuestionTextCount == d.value) {
-            return index;
-          }
-        }).filter(isFinite)[0];
-        var participant = question[index];
-        return participant.problem ? d3.rgb('#ff0000') : d3.rgb('#00ff00');
-      }
     },
     axis: {
       y: {
@@ -46,7 +38,6 @@ function createPlot(questionData) {
         label: 'Back Jumps'
       }
     },
-    legend: { show: false, },
     tooltip: { show: false, },
     point: { r: 3.5 }
   });
