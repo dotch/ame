@@ -87,5 +87,3 @@ var questions = ['q1', 'q2', 'q3', 'q4', 'q7', 'q8', 'q12', 'q13', 'q15', 'q16',
 
 var result = R.map(extract, questions);
 fs.writeFileSync(__dirname + '/../public/data/data.json', JSON.stringify(result));
-
-// TODO: export as csv. analyze!
