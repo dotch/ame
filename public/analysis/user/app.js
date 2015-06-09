@@ -40,8 +40,8 @@ function createBarCharts(data) {
     createBarChart(value, 'fixationsRelative');
     createBarChart(value, 'backJumpsCount');
   });
+  return data;
 }
-
 
 function createBarChart(questionData, field) {
   var questions = _.map(questionData, function (d) {

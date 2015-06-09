@@ -1,0 +1,45 @@
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="../lib/jquery.tablesorter/dist/css/theme.default.min.css"/>
+</head>
+<body>
+
+<script id="table-template" type="text/x-handlebars-template">
+  <table>
+    <thead>
+      <tr>
+        <td>Indicator</td>
+        <td>True Positive Rate</td>
+        <td>False Positive Rate</td>
+        <td>F1</td>
+        <td>MCC</td>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each data}}
+      <tr>
+        <td>{{ indicator }}</td>
+        <td>{{ true-positive-rate }}</td>
+        <td>{{ false-positive-rate }}</td>
+        <td>{{ f1 }}</td>
+        <td>{{ mcc }}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</script>
+
+<table id="example">
+
+</table>
+
+<script type='text/javascript' src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type='text/javascript' src="../lib/jquery.tablesorter/dist/js/jquery.tablesorter.min.js"></script>
+<script type='text/javascript' src="../lib/handlebars/handlebars.min.js"></script>
+<script type='text/javascript' src="../lib/es6-promise/promise.js"></script>
+<script type='text/javascript' src="../lib/fetch/fetch.js"></script>
+<script type='text/javascript' src="../lib/lodash/lodash.js"></script>
+<script type='text/javascript' src="app.js"></script>
+</body>
+</html>
